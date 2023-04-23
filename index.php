@@ -2,7 +2,6 @@
     namespace Core;
     error_reporting(E_ALL);
     ini_set('display_errors', 'on');
-    use Project\Test2;
 
     spl_autoload_register(function($class) {
         $root = $_SERVER['DOCUMENT_ROOT'];
@@ -19,4 +18,4 @@
         require_once($path);
     });
 
-    $test2 = new Test2();
+    $routes = require($_SERVER['DOCUMENT_ROOT'].'project/config/routes.php');
