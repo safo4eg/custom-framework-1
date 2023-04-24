@@ -18,4 +18,7 @@
         require_once($path);
     });
 
-    $routes = require($_SERVER['DOCUMENT_ROOT'].'project/config/routes.php');
+    $routes = require($_SERVER['DOCUMENT_ROOT'].'/project/config/routes.php');
+    $track = (new Router)->getTrack($routes, $_SERVER['REQUEST_URI']);
+
+    echo var_dump($track);
